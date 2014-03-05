@@ -21,7 +21,7 @@
  * <http://www.apache.org/>.
  * 
  * +------------------------------------------------------------------------------------------------+
- * | License: https://raw.github.com/eduosi/web-support-oauth/master/LICENSE 						|
+ * | License: License: https://mcrypt.buession.com.cn/LICENSE 										|
  * | Author: Yong.Teng <webmaster@buession.com> 													|
  * +------------------------------------------------------------------------------------------------+
  */
@@ -30,5 +30,5 @@
  * Annotation support for string mcrypt encode.
  *
  */
- 
+
 package com.buession.mcrypt;

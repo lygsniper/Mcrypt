@@ -21,7 +21,7 @@
  * <http://www.apache.org/>.
  * 
  * +------------------------------------------------------------------------------------------------+
- * | License: https://raw.github.com/eduosi/Mcrypt/master/LICENSE 									|
+ * | License: License: https://mcrypt.buession.com.cn/LICENSE 										|
  * | Author: Yong.Teng <webmaster@buession.com> 													|
  * +------------------------------------------------------------------------------------------------+
  */
