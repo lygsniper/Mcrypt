@@ -1,0 +1,8 @@
+Changes 0.0.1
+												05 Mar 2014
+	*) The first public version.
+	*) Feature: 实现通用加密 API ( Mcrypt )
+	*) Feature: 实现 MD5 加密 API ( MD5Mcrypt )
+	*) Feature: 实现 SHA 加密 API ( ShaMcrypt )
+	*) Feature: 实现 SHA-256 加密 API ( Sha1Mcrypt )
+	*) Feature: 实现 SHA-512 加密 API ( Sha512Mcrypt )

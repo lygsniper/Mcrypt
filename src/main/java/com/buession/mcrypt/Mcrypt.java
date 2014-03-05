@@ -333,12 +333,12 @@ public class Mcrypt {
 	/**
 	 * 字符串加密
 	 * 
-	 * @param str
+	 * @param object
 	 *        需要加密的字符串
 	 * @return 加密后的字符串
 	 */
-	public String encode(String str) {
-		if (str == null) {
+	public String encode(Object object) {
+		if (object == null) {
 			throw new IllegalArgumentException("String could not be null");
 		}
 
@@ -350,10 +350,22 @@ public class Mcrypt {
 			MessageDigest messageDigest = provider == null ? MessageDigest.getInstance(algo)
 					: MessageDigest.getInstance(algo, provider);
 
-			return encode(str, messageDigest);
+			if (object instanceof char[]) {
+				return encode(new String((char[]) object), messageDigest);
+			} else if (object instanceof byte[]) {
+				return encode(new String((byte[]) object, characterEncoding), messageDigest);
+			} else {
+				return encode(object.toString(), messageDigest);
+			}
 		} catch (final NoSuchAlgorithmException e) {
+			logger.error(e.getMessage());
 			throw new SecurityException(e);
+		} catch (UnsupportedEncodingException e) {
+			logger.error(e.getMessage());
+			e.printStackTrace();
 		}
+
+		return null;
 	}
 
 	/**
