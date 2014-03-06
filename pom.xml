@@ -43,7 +43,7 @@
   	</dependencies>
 
     <build>
-		<finalName>velocity-support</finalName>
+		<finalName>mcrypt</finalName>
 		<defaultGoal>compile</defaultGoal>
         <plugins>
             <plugin>
