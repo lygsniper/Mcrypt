@@ -36,6 +36,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 对象加密通用方法
+ * 
+ * @author yong.teng
+ */
 public class Mcrypt {
 
 	private final static char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -85,7 +90,7 @@ public class Mcrypt {
 	 * @param count
 	 *        重复加密次数
 	 */
-	public Mcrypt(final String algo, int count) {
+	public Mcrypt(final String algo, final int count) {
 		this(algo, null, count);
 	}
 
@@ -97,7 +102,7 @@ public class Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public Mcrypt(final String algo, int count, Provider provider) {
+	public Mcrypt(final String algo, int count, final Provider provider) {
 		this(algo, null, count, provider);
 	}
 
@@ -107,7 +112,7 @@ public class Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public Mcrypt(final String algo, Provider provider) {
+	public Mcrypt(final String algo, final Provider provider) {
 		this.algo = algo;
 		this.provider = provider;
 	}
@@ -131,7 +136,7 @@ public class Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public Mcrypt(final String algo, final String characterEncoding, Provider provider) {
+	public Mcrypt(final String algo, final String characterEncoding, final Provider provider) {
 		this.algo = algo;
 		this.characterEncoding = characterEncoding;
 		this.provider = provider;
@@ -145,7 +150,7 @@ public class Mcrypt {
 	 * @param count
 	 *        重复加密次数
 	 */
-	public Mcrypt(final String algo, final String characterEncoding, int count) {
+	public Mcrypt(final String algo, final String characterEncoding, final int count) {
 		this(algo, characterEncoding, null, count);
 	}
 
@@ -159,7 +164,8 @@ public class Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public Mcrypt(final String algo, final String characterEncoding, int count, Provider provider) {
+	public Mcrypt(final String algo, final String characterEncoding, int count,
+			final Provider provider) {
 		this(algo, characterEncoding, null, count, provider);
 	}
 
@@ -186,7 +192,7 @@ public class Mcrypt {
 	 *        信息摘要对象的提供者
 	 */
 	public Mcrypt(final String algo, final String characterEncoding, final String salt,
-			Provider provider) {
+			final Provider provider) {
 		this.algo = algo;
 		this.characterEncoding = characterEncoding;
 		this.salt = salt;
@@ -203,7 +209,8 @@ public class Mcrypt {
 	 * @param count
 	 *        重复加密次数
 	 */
-	public Mcrypt(final String algo, final String characterEncoding, final String salt, int count) {
+	public Mcrypt(final String algo, final String characterEncoding, final String salt,
+			final int count) {
 		this(algo, characterEncoding, salt, count, null);
 	}
 
@@ -219,8 +226,8 @@ public class Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public Mcrypt(final String algo, final String characterEncoding, final String salt, int count,
-			Provider provider) {
+	public Mcrypt(final String algo, final String characterEncoding, final String salt,
+			final int count, final Provider provider) {
 		this(algo, characterEncoding, salt);
 
 		if (count < 1) {
@@ -246,7 +253,7 @@ public class Mcrypt {
 	 * @param algo
 	 *        请求算法的名称
 	 */
-	public void setAlgo(String algo) {
+	public void setAlgo(final String algo) {
 		this.algo = algo;
 	}
 
@@ -265,7 +272,7 @@ public class Mcrypt {
 	 * @param salt
 	 *        加密密钥
 	 */
-	public void setSalt(String salt) {
+	public void setSalt(final String salt) {
 		this.salt = salt;
 	}
 
@@ -284,7 +291,7 @@ public class Mcrypt {
 	 * @param characterEncoding
 	 *        字符串编码
 	 */
-	public void setCharacterEncoding(String characterEncoding) {
+	public void setCharacterEncoding(final String characterEncoding) {
 		this.characterEncoding = characterEncoding;
 	}
 
@@ -303,7 +310,7 @@ public class Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public void setProvider(Provider provider) {
+	public void setProvider(final Provider provider) {
 		this.provider = provider;
 	}
 
@@ -337,7 +344,7 @@ public class Mcrypt {
 	 *        需要加密的字符串
 	 * @return 加密后的字符串
 	 */
-	public String encode(Object object) {
+	public String encode(final Object object) {
 		if (object == null) {
 			throw new IllegalArgumentException("String could not be null");
 		}
@@ -362,10 +369,25 @@ public class Mcrypt {
 			throw new SecurityException(e);
 		} catch (UnsupportedEncodingException e) {
 			logger.error(e.getMessage());
-			e.printStackTrace();
 		}
 
 		return null;
+	}
+
+	/**
+	 * 字符串解密
+	 * 该方法需要提供信息摘要算法支持双向解密才可用
+	 * 
+	 * @param cs
+	 *        要被解密的 char 值序列
+	 * @return 解密后的字符串
+	 */
+	public String decode(final CharSequence cs) {
+		if (algo == null || algo.length() == 0) {
+			throw new RuntimeException("Algo could not be null");
+		}
+
+		throw new UnsupportedOperationException("Algo '" + algo + "' unsupported decode");
 	}
 
 	/**
@@ -377,7 +399,7 @@ public class Mcrypt {
 	 *        实现指定摘要算法的 MessageDigest 对象
 	 * @return 加密后的字符串
 	 */
-	private String encode(String str, MessageDigest messageDigest) {
+	private String encode(String str, final MessageDigest messageDigest) {
 		if (StringUtils.isEmpty(salt) == false) {
 			str += salt;
 		}

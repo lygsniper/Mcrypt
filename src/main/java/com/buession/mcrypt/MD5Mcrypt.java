@@ -29,6 +29,11 @@ package com.buession.mcrypt;
 
 import java.security.Provider;
 
+/**
+ * 提供对象 MD5 加密
+ * 
+ * @author yong.teng
+ */
 public final class MD5Mcrypt extends Mcrypt {
 
 	public final static String ALGORITHM = "MD5";
@@ -41,7 +46,7 @@ public final class MD5Mcrypt extends Mcrypt {
 	 * @param count
 	 *        重复加密次数
 	 */
-	public MD5Mcrypt(int count) {
+	public MD5Mcrypt(final int count) {
 		super(ALGORITHM, count);
 	}
 
@@ -51,7 +56,7 @@ public final class MD5Mcrypt extends Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public MD5Mcrypt(int count, Provider provider) {
+	public MD5Mcrypt(final int count, final Provider provider) {
 		super(ALGORITHM, count, provider);
 	}
 
@@ -91,7 +96,7 @@ public final class MD5Mcrypt extends Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public MD5Mcrypt(final String characterEncoding, int count, Provider provider) {
+	public MD5Mcrypt(final String characterEncoding, final int count, final Provider provider) {
 		super(ALGORITHM, characterEncoding, count, provider);
 	}
 
@@ -113,7 +118,7 @@ public final class MD5Mcrypt extends Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public MD5Mcrypt(final String characterEncoding, final String salt, Provider provider) {
+	public MD5Mcrypt(final String characterEncoding, final String salt, final Provider provider) {
 		super(ALGORITHM, characterEncoding, salt, provider);
 	}
 
@@ -125,7 +130,7 @@ public final class MD5Mcrypt extends Mcrypt {
 	 * @param count
 	 *        重复加密次数
 	 */
-	public MD5Mcrypt(final String characterEncoding, final String salt, int count) {
+	public MD5Mcrypt(final String characterEncoding, final String salt, final int count) {
 		super(ALGORITHM, characterEncoding, salt, count);
 	}
 
@@ -139,7 +144,8 @@ public final class MD5Mcrypt extends Mcrypt {
 	 * @param provider
 	 *        信息摘要对象的提供者
 	 */
-	public MD5Mcrypt(final String characterEncoding, final String salt, int count, Provider provider) {
+	public MD5Mcrypt(final String characterEncoding, final String salt, final int count,
+			final Provider provider) {
 		super(ALGORITHM, characterEncoding, salt, count, provider);
 	}
 
