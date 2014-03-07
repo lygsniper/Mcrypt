@@ -36,10 +36,8 @@ import java.security.Provider;
  */
 public final class Sha512Mcrypt extends Mcrypt {
 
-	public final static String ALGORITHM = "SHA-512";
-
 	public Sha512Mcrypt() {
-		super(ALGORITHM);
+		super(Mcrypt.SHA512);
 	}
 
 	/**
@@ -47,7 +45,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        重复加密次数
 	 */
 	public Sha512Mcrypt(final int count) {
-		super(ALGORITHM, count);
+		super(Mcrypt.SHA512, count);
 	}
 
 	/**
@@ -57,7 +55,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        信息摘要对象的提供者
 	 */
 	public Sha512Mcrypt(final int count, final Provider provider) {
-		super(ALGORITHM, count, provider);
+		super(Mcrypt.SHA512, count, provider);
 	}
 
 	/**
@@ -65,7 +63,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        字符编码
 	 */
 	public Sha512Mcrypt(final String characterEncoding) {
-		super(ALGORITHM, characterEncoding);
+		super(Mcrypt.SHA512, characterEncoding);
 	}
 
 	/**
@@ -75,7 +73,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        信息摘要对象的提供者
 	 */
 	public Sha512Mcrypt(final String characterEncoding, final Provider provider) {
-		super(ALGORITHM, characterEncoding, provider);
+		super(Mcrypt.SHA512, characterEncoding, provider);
 	}
 
 	/**
@@ -85,7 +83,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        重复加密次数
 	 */
 	public Sha512Mcrypt(final String characterEncoding, final int count) {
-		super(ALGORITHM, characterEncoding, count);
+		super(Mcrypt.SHA512, characterEncoding, count);
 	}
 
 	/**
@@ -97,7 +95,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        信息摘要对象的提供者
 	 */
 	public Sha512Mcrypt(final String characterEncoding, final int count, final Provider provider) {
-		super(ALGORITHM, characterEncoding, count, provider);
+		super(Mcrypt.SHA512, characterEncoding, count, provider);
 	}
 
 	/**
@@ -107,7 +105,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        加密密钥
 	 */
 	public Sha512Mcrypt(final String characterEncoding, final String salt) {
-		super(ALGORITHM, characterEncoding, salt);
+		super(Mcrypt.SHA512, characterEncoding, salt);
 	}
 
 	/**
@@ -119,7 +117,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        信息摘要对象的提供者
 	 */
 	public Sha512Mcrypt(final String characterEncoding, final String salt, final Provider provider) {
-		super(ALGORITHM, characterEncoding, salt, provider);
+		super(Mcrypt.SHA512, characterEncoding, salt, provider);
 	}
 
 	/**
@@ -131,7 +129,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 *        重复加密次数
 	 */
 	public Sha512Mcrypt(final String characterEncoding, final String salt, final int count) {
-		super(ALGORITHM, characterEncoding, salt, count);
+		super(Mcrypt.SHA512, characterEncoding, salt, count);
 	}
 
 	/**
@@ -146,7 +144,7 @@ public final class Sha512Mcrypt extends Mcrypt {
 	 */
 	public Sha512Mcrypt(final String characterEncoding, final String salt, final int count,
 			final Provider provider) {
-		super(ALGORITHM, characterEncoding, salt, count, provider);
+		super(Mcrypt.SHA512, characterEncoding, salt, count, provider);
 	}
 
 }

@@ -43,6 +43,16 @@ import org.slf4j.LoggerFactory;
  */
 public class Mcrypt {
 
+	public final static String MD5 = "MD5";
+
+	public final static String SHA = "SHA";
+
+	public final static String SHA1 = "SHA-1";
+
+	public final static String SHA256 = "SHA-256";
+
+	public final static String SHA512 = "SHA-512";
+
 	private final static char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 			'a', 'b', 'c', 'd', 'e', 'f'};
 

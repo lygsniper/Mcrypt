@@ -1,3 +1,7 @@
+Changes 0.0.2
+												07 Mar 2014
+	*) Change: 讲常用加密算法定义到 Mcrypt 中
+
 Changes 0.0.1
 												05 Mar 2014
 	*) The first public version.
