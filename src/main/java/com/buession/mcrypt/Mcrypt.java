@@ -19,7 +19,7 @@
  * <http://www.apache.org/>.
  * 
  * +------------------------------------------------------------------------------------------------+
- * | License: License: https://mcrypt.buession.com.cn/LICENSE 										|
+ * | License: http://mcrypt.buession.com.cn/LICENSE 												|
  * | Author: Yong.Teng <webmaster@buession.com> 													|
  * | Copyright @ 2013-2014 Buession.com Inc.														|
  * +------------------------------------------------------------------------------------------------+
@@ -347,7 +347,7 @@ public class Mcrypt {
 	}
 
 	/**
-	 * 字符串加密
+	 * 对象加密
 	 * 
 	 * @param object
 	 *        需要加密的字符串
