@@ -6,7 +6,7 @@
   	<artifactId>mcrypt</artifactId>
   	<url>http://maven.apache.org</url>
   	<description>string mcrypt, support the double encryption</description>
-  	<version>0.0.1</version>
+  	<version>0.0.3</version>
   	<packaging>jar</packaging>
 
   	<organization>
